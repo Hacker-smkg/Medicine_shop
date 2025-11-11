@@ -1,0 +1,196 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+.pharmacare-container {
+  width: 100%;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px 50px;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  width: 350px;
+  padding:5px 0px ;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  background: #66BC89;
+  height: auto;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #0056b3;
+}
+
+/* Header Icons */
+.header-icons {
+  display: flex;
+  gap: 30px;
+  
+}
+
+/* .icon {
+
+  cursor: pointer;
+  font-size: 20px;
+  color: #080808;
+  transition: 0.3s;
+  height: 40px;
+  margin-top: 10px;
+} */
+ .icon2{
+  display:flex ;
+  align-items: center;
+  margin-left: 5px;
+}
+.icon:hover {
+  color: #007bff;
+}
+
+.icon svg {
+  /* margin-right: 5px; */
+  font-size: 40px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 50px;
+  background: #66BC89;
+  color: white;
+}
+.icon{
+  font-size: 20px;
+}
+.ico{
+  color: black;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.cart{
+  font-size: xx-large;
+}
+.menu-btn {
+  display: flex;
+  align-items: center;
+  background: #0cb069;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.menu-btn svg {
+  margin-right: 8px;
+}
+
+.menu-btn:hover {
+  background: #21A;
+}
+
+/* Navigation Links */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  
+  gap: 20px;
+}
+
+
+.navbar ul a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: 0.3s;
+  margin-right: 40px;
+}
+
+.navbar ul a:hover,
+.navbar ul .active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Ask Your Pharmacist Button */
+.ask-btn {
+  background: #ff6b6b;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ask-btn:hover {
+  background: #d64a4a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar ul a {
+    display: block;
+  }
+}

@@ -1,0 +1,164 @@
+/* Main container */
+.checkout-container {
+    display: flex;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f3f4f6;
+  }
+  
+  /* Left Section - Shipping Address */
+  .shipping-address {
+    width: 67%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .shipping-address h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Form Styling */
+  .input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .continue-btn {
+    width: 100%;
+    background-color: #d32f2f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Expandable Sections */
+  .expandable-sections {
+    margin-top: 20px;
+  }
+  
+  .expandable-section {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .expandable-section button {
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Right Section - Order Summary */
+  .order-summary {
+    width: 33%;
+    background-color: white;
+    padding: 20px;
+    margin-left: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .order-summary h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .order-details {
+    margin-bottom: 10px;
+  }
+  
+  .order-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .free {
+    color: green;
+  }
+  
+  .order-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .savings {
+    color: red;
+    font-size: 14px;
+  }
+  
+  /* Alert Box */
+  .alert {
+    background-color: #fff3cd;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .alert a {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  /* Place Order Button */
+  .place-order-btn {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Customer Support */
+  .support {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .support a {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  /* Offer Box */
+  .offer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .offer a {
+    color: blue;
+    text-decoration: underline;
+  }
+  
