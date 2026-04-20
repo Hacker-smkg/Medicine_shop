@@ -7,15 +7,16 @@ import router from "./Router/route.js";
 import loginRouter from "./Router/loginroutes.js";
 import productRoute from "./Router/addProRout.js";
 import productRouter from "./Router/productFetch.js";
+import chatRouter from "./Router/chat.js";
 dotenv.config()
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 
 app.use(morgan("dev"))
 
 //  Use Environment Variables for MongoDB Connection
-const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://sohamata33:sohamata33@medicineshop.2uulw.mongodb.net/";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/medicine_shop";
 
 mongoose
   .connect(MONGO_URI, {
@@ -35,6 +36,7 @@ app.use("/", router);
 app.use("/", loginRouter);
 app.use("/api/products", productRoute);
 app.use("/api/products", productRouter);
+app.use("/api/chat", chatRouter);
 
 //  Start Server
 app.listen(PORT, () => {
