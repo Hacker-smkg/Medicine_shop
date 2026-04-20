@@ -14,6 +14,7 @@ import { AuthProvider } from './utils/contextapi';
 import CartProvider from './Pages/Addtocart/cartContext';
 import Address from './Pages/Address/address';
 import Footer from './Navbar/footer';
+import Chatbot from './components/Chatbot/Chatbot';
 
 
 // Protected Route Component
@@ -61,6 +62,7 @@ function App() {
           <Route path='/addtocart' element={<Addtocart/>}/>
      
         </Routes>
+         <Chatbot />
          <Footer/>
       </Router>
       </CartProvider>
