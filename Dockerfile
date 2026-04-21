@@ -15,7 +15,7 @@ COPY Server ./Server
 COPY ai-service ./ai-service
 
 # Create an execution script to run both servers concurrently
-RUN echo '#!/bin/bash\ncd /app/ai-service && uvicorn main:app --host 127.0.0.1 --port 8000 &\ncd /app/Server && npm start' > start.sh
+RUN printf "#!/bin/bash\ncd /app/ai-service && uvicorn main:app --host 127.0.0.1 --port 8000 &\ncd /app/Server && npm start\n" > start.sh
 RUN chmod +x start.sh
 
 # The Node.js Express server runs on 5000 and exposes endpoints outward
