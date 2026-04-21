@@ -31,7 +31,7 @@ function AddProduct() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token"); // Get token from local storage
-      await axios.post("http://localhost:8000/api/products", product,{
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/products`, product,{
         headers: { Authorization: `Bearer ${token}` }, // Send token
       });
       alert("Product Added Successfully!");

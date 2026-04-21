@@ -53,7 +53,7 @@ const navigate=useNavigate()
 
     // Send Data to Backend
     try {
-      const response = await axios.post("http://localhost:8000/add", user);
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/add`, user);
 
       if (response.status === 200) {
         Swal.fire("Success", "User Registered Successfully!", "success");

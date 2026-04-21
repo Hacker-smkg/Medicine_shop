@@ -17,7 +17,7 @@ function ProductDetails() {
   // Fetch product details from API
   async function fetchProductDetails() {
     try {
-      const response = await fetch(`http://localhost:8000/api/products/${id}`);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/products/${id}`);
       const result = await response.json();
       setProduct(result);
       setLoading(false);

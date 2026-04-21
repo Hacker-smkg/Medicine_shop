@@ -20,7 +20,7 @@ const navigate=useNavigate()
   // Fetch products
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/products");
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/products`);
       setProducts(res.data);
       setFilteredProducts(res.data);
     } catch (error) {
@@ -31,7 +31,7 @@ const navigate=useNavigate()
   // Fetch categories and brands dynamically
   const fetchFilters = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/products/filters");
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/products/filters`);
       setCategories(res.data.categories);
       setBrands(res.data.brands);
     } catch (error) {
