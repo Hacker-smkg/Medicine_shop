@@ -75,7 +75,7 @@ function ProductDetails() {
     <div className="product-details-container">
       <div className="section">
         <div className="breadcrumb">
-          Home / {product.category} / {product.name}
+          <span>Home</span> / <span>{product.category}</span> / <span>{product.name}</span>
         </div>
 
         <div className="product-content">
@@ -84,11 +84,11 @@ function ProductDetails() {
           </div>
 
           <div className="product-info">
-            <h3 className="category">{product.category.toUpperCase()}</h3>
+            <span className="category-badge">{product.category}</span>
             <h1 className="product-title">{product.name}</h1>
-            <p className="product-price">
-              ₹{product.price} <span className="free-shipping"> & Free Shipping</span>
-            </p>
+            <div className="product-price">
+              ₹{product.price} <span className="free-shipping">Free Shipping</span>
+            </div>
             <p className="description">{product.description}</p>
 
             <div className="quantity-selector">
@@ -102,14 +102,14 @@ function ProductDetails() {
             </button>
 
             <div className="additional-details">
-              <p>
-                <strong>Category:</strong> <span className="category">{product.category}</span>
+              <p style={{ fontWeight: '600', color: 'var(--text-main)' }}>
+                Guaranteed safe checkout
               </p>
-              <p className="shopping">Free shipping on orders over ₹50!</p>
               <ul>
-                <li>No-Risk Money Back Guarantee!</li>
-                <li>No Hassle Refunds</li>
+                <li>Money Back Guarantee</li>
+                <li>Hassle Free Refunds</li>
                 <li>Secure Payments</li>
+                <li>24/7 Pharmacy Support</li>
               </ul>
             </div>
           </div>
