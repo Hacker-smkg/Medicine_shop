@@ -68,67 +68,76 @@ const navigate=useNavigate()
   };
 
   return (
-    <div className="shop-container flex">
+    <div className="shop-container">
       {/* Sidebar - Filters */}
-      <div className="sidebar p-4 border-r w-1/4">
-        <h2 className="font-bold text-lg mb-2">Filters</h2>
+      <aside className="sidebar">
+        <h2>Filters</h2>
 
         {/* Category Filter */}
-        <div className="mb-4">
-          <h3 className="font-semibold mb-1">Category</h3>
+        <div className="filter-group">
+          <h3>Category</h3>
           {categories.map((category) => (
-            <div key={category}>
+            <label key={category} className="filter-item">
               <input
                 type="checkbox"
                 id={category}
                 onChange={() => handleFilterChange("category", category)}
               />
-              <label htmlFor={category} className="ml-2">{category}</label>
-            </div>
+              <span>{category}</span>
+            </label>
           ))}
         </div>
 
         {/* Brand Filter */}
-        <div className="mb-4">
-          <h3 className="font-semibold mb-1">Brand</h3>
+        <div className="filter-group">
+          <h3>Brand</h3>
           {brands.map((brand) => (
-            <div key={brand}>
+            <label key={brand} className="filter-item">
               <input
                 type="checkbox"
                 id={brand}
                 onChange={() => handleFilterChange("brand", brand)}
               />
-              <label htmlFor={brand} className="ml-2">{brand}</label>
-            </div>
+              <span>{brand}</span>
+            </label>
           ))}
         </div>
-      </div>
+      </aside>
 
       {/* Product List */}
-      <div className="product-section">
-      <h2 className="product-heading">All Products</h2>
-      <div className="product-grid">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <div key={product._id} className="product-card">
-              <img src={product.image} alt={product.name} className="product-image" />
-              <h3 className="product-title">{product.name}</h3>
-              <p className="product-description">{product.description}</p>
-              <p className="product-price">₹{product.price}</p>
-              <button
-                className="product-button"
-                onClick={() => navigate(`/product/${product._id}`)}
-              >
-                Product Details
-              </button>
+      <main className="product-section">
+        <h2 className="product-heading">Our Medicines</h2>
+        <div className="product-grid">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+              <div key={product._id} className="product-card">
+                <div className="product-image-container">
+                    <img src={product.image} alt={product.name} className="product-image" />
+                </div>
+                <div className="product-info">
+                    <h3 className="product-title">{product.name}</h3>
+                    <p className="product-description">{product.description}</p>
+                    <div className="product-price-row">
+                        <p className="product-price">₹{product.price}</p>
+                        <button
+                            className="product-button"
+                            onClick={() => navigate(`/product/${product._id}`)}
+                        >
+                            View
+                        </button>
+                    </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="no-products">
+                <h3 style={{ fontSize: '1.5rem', color: 'var(--text-muted)' }}>No products found matching your filters.</h3>
+                <p>Try selecting different categories or brands.</p>
             </div>
-          ))
-        ) : (
-          <p className="no-products">No products found.</p>
-        )}
-      </div>
+          )}
+        </div>
+      </main>
     </div>
-</div>
   );
 }
 
