@@ -14,7 +14,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY", "your-api-key-here"))
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY", "your-api-key-here"),
+    http_client=None # Explicitly disable custom http client to avoid proxy conflicts
+)
 
 SYSTEM_PROMPT = """You are MediBot, a helpful assistant for an online medicine shop.
 You help users:
