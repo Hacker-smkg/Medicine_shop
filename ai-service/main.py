@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
 import os
+import json
 from openai import OpenAI
 
 app = FastAPI(title="MediChat AI Service", version="1.0.0")
@@ -15,7 +16,7 @@ app.add_middleware(
 )
 
 client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY", "skprojdAJ9c5bEdjHBn1eqQd1Frh8T4HMLk1jpF1vSeiOpUUe5j7bAnT3RbQmBTjKX-MsH8lvJk9awTT3BlbkFJNxpzM0dPTDaqBZuGf1fAmlrKbrRTdLvSmER33c9q1RfeCHCIvoneCgUPEUHwqTV6tMcJkVfkwA"),
+    api_key=os.getenv("OPENAI_API_KEY"),
     http_client=None  # Explicitly disable custom http client to avoid proxy conflicts
 )
 
@@ -112,8 +113,15 @@ async def suggest_medicine(data: dict):
             max_tokens=200,
             temperature=0.3,
         )
-        import json
-        result = json.loads(response.choices[0].message.content)
+        content = response.choices[0].message.content
+        # Basic cleanup in case GPT returns markdown code blocks
+        if "```json" in content:
+            content = content.split("```json")[1].split("```")[0].strip()
+        elif "```" in content:
+            content = content.split("```")[1].strip()
+
+        result = json.loads(content)
         return result
     except Exception as e:
+        print(f"Error in suggest_medicine: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))

@@ -21,9 +21,13 @@ router.post("/", async (req, res) => {
     const data = await response.json();
     res.json(data);
   } catch (err) {
-    console.error("[Chat Route Error]", err.message);
+    console.error("[Chat Route Error]", {
+      message: err.message,
+      target: `${AI_SERVICE_URL}/chat`,
+      cause: err.cause?.message || "Unknown cause"
+    });
     res.status(500).json({
-      error: "AI service unavailable. Please try again.",
+      error: "AI service unavailable. Please check server logs.",
     });
   }
 });
