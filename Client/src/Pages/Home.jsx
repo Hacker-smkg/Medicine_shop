@@ -17,7 +17,7 @@ const featuredProducts = [
     id: 2,
     name: "Vitamin C 1000mg",
     price: 199.99,
-    image: "https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?auto=format&fit=crop&q=80&w=500",
+    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=500",
     description: "Immunity booster supplements"
   },
   {
